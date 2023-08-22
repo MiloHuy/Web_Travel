@@ -1,0 +1,126 @@
+:root{
+    --PrimaryColor: hsl(199,100%,33%);
+    --SecondaryColor: hsl(187,85%,43%);
+    --gradientColor: linear-gradient(to right,hsl(187,85%,43%),hsl(199,100%,33%));
+    --whiteColor: hsl(0,0%,100%);
+    --blackColor:hsl(201,33%,16%);
+    --textColor:hsl(240,4%,36%);
+    --whiteColorDream: hsl(226, 43%, 37%);
+    --grayText: rgb(190,190,190);
+    --inputColor:rgb(239,239,239);
+    --bodyColor: rgb(240,240,240);
+    --cardBG:rgb(225,225,235)
+}
+.header{
+    position: flex;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--whiteColorDream);
+    padding: 1rem;
+    z-index: 10000;
+    box-shadow: 0 2px 4px rgba(2,15,29,.242); 
+    .logo{
+        color: var(--blackColor);
+        font-weight: 600;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        .icon{
+            font-size: 25px;
+            color: var(--PrimaryColor);
+            transform: translateY(5px);
+        }
+    }
+    .navBar{
+        position: relative;
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+        .navList{
+            padding: .2rem;
+            justify-content: center;
+            display: flex;
+            width: 100%;
+            .navItems{
+                padding: .5rem;
+                .navLink{
+                    color: var(--textColor);
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    &:hover{
+                        color: var(--PrimaryColor);
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    @media screen and (max-width: 750px) {
+        .navBar{
+            position: absolute;
+            background: var(--inputColor);
+            height: max-content;
+            width: 70%;
+            border-radius: 1rem; 
+            top: -500rem;
+            left: 50%;
+            padding: 1rem;
+            transform: translate(-50%);
+            z-index: 2000;
+            box-shadow: 0 2px 4px rgba(2,15,29,.9);
+            transition: .3s ease-in-out;
+           
+            .navList{
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                padding: .5rem 0;
+                margin: auto;
+                .navItems{
+                    padding: .5rem 0; 
+                    .navLink{
+                        color: var(--textColor);
+                        font-size: .9rem;
+                        font-weight: 600;
+                        &:hover{
+                            color: var(--PrimaryColor);
+                        }
+                    }
+                }
+                .btn{
+                    margin-top: 1rem;
+                    a{
+                        font-weight: 600;
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+            .closeNavBar{
+                position: absolute;
+                top: 1rem;
+                right: 1.5rem;
+                color: var(--PrimaryColor);
+                &:hover{
+                    color: var(--SecondaryColor);
+                }
+            }
+        }
+        .activeNavBar{
+            top: 7rem;
+        }
+        
+        
+    }
+    .toggleNavBar{
+        .icon{
+            font-size: 25px;
+            color: var(--PrimaryColor);
+        }
+        &:hover.icon{
+            color:var(--SecondaryColor)             
+        }
+    }
+}
